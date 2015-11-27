@@ -1,0 +1,28 @@
+<div id="cesiumcanvas">
+
+
+    <style>
+      @import url(Cesium/Widgets/widgets.css);
+      #cesiumContainer {
+                  width: 100%; height: 100%; margin: 0px; padding: 0; overflow: hidden;
+              }
+    </style>
+    <div id="cesiumContainer"  ></div>
+
+    <script src="App.js"></script>
+
+
+    <script>
+         window.onresize = function(){
+             var head = document.getElementById("head").getBoundingClientRect();
+             var foot = document.getElementById("foot").getBoundingClientRect();
+
+             var gap = foot.top - head.bottom;
+             document.getElementById("cesiumcanvas").style.height = gap + "px";
+         };
+
+         setTimeout(window.onresize, 500) ;
+    </script>
+
+
+</div>
